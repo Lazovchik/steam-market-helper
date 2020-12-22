@@ -7,11 +7,13 @@ import {Container} from "react-bootstrap";
 
 //Components
 import HeaderBar from './Components/HeaderBar'
+import Footer from "./Components/Footer";
 
 function App() {
   return (
       <Container fluid style={{backgroundColor:'#5c5c5c', height:'100vh', padding:'0'}}>
         <HeaderBar></HeaderBar>
+        <Footer></Footer>
       </Container>
   );
 }
