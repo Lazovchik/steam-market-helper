@@ -1,26 +1,16 @@
 import React, {Component} from "react";
-import {Container} from "react-bootstrap";
-import logo from "../logo.svg";
+
+//Bootstrap
+import {Navbar} from "react-bootstrap";
 
 class HeaderBar extends Component {
     render() {
         return (
-            <Container>
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
-                </header>
-            </Container>
+            <Navbar bg="dark" variant="dark">
+                <Navbar.Brand >
+                    Steam Market Helper
+                </Navbar.Brand>
+            </Navbar>
         );
     }
 }
