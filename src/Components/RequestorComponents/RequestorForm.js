@@ -17,7 +17,7 @@ class RequestorForm extends Component {
             wName: '',
             wState: '',
             wTrack: '',
-            wPrice:''
+            wPrice:'12$' //a changer manuelement avant l'ajout d'item:)))
         }
     }
 
@@ -76,7 +76,7 @@ class RequestorForm extends Component {
                     </Form.Group>
                 </fieldset>
                 <Button variant='warning' type="submit">
-                    Submit
+                    Add Item
                 </Button>
             </Form>
         );

@@ -44,14 +44,19 @@ class ItemList extends Component {
         console.log(this.state.wList)
     }
 
+    handleDelete = (i) => {
+        const list = this.state.wList;
+        localStorage.removeItem(list[i])
+    }
+
     listRender (arr) {
         let list = []
         for (let i = 0; i <arr.length; i++)
         {
             list.push (
-                <ListGroup.Item>
+                <ListGroup.Item key={i}>
                     {arr[i]}
-                    <Button variant='warning' type='submit' className='float-right btn-sm'>
+                    <Button variant='warning' type='button' className='float-right btn-sm' onClick={()=>this.handleDelete(i)}>
                         Remove
                     </Button>
                 </ListGroup.Item>
@@ -61,19 +66,22 @@ class ItemList extends Component {
     }
     render() {
         const arr = this.state.wList
-        /*const listItems = arr.map((weapon) =>
-                <ListGroup.Item>
-                    {weapon}
-                    <Button variant='warning' type='submit' className='float-right btn-sm'>
-                        Remove
-                    </Button>
-                </ListGroup.Item>
-        )*/
 
         return (
             <ListGroup className='bg-dark mt-4 p-3 rounded' >
                 {this.listRender(arr)}
-                <ListGroup.Item>
+
+                <Button  variant='warning' type="button" className='mt-3' onClick={this.handleClick}>
+                    Update
+                </Button>
+            </ListGroup>
+        );
+    }
+}
+
+export default ItemList;
+
+/*<ListGroup.Item>
                     A
                     <Button variant='warning' type='submit' className='float-right btn-sm'>
                         Remove
@@ -84,13 +92,4 @@ class ItemList extends Component {
                     <Button variant='warning' type="submit" className='float-right btn-sm'>
                         Remove
                     </Button>
-                </ListGroup.Item>
-                <Button  variant='warning' type="submit" className='mt-3' onClick={this.handleClick}>
-                    Update
-                </Button>
-            </ListGroup>
-        );
-    }
-}
-
-export default ItemList;
+                </ListGroup.Item>*/
